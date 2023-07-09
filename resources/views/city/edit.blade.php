@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('content')
-<form action='{{ url('city/'. $data->id) }}' method='post'>
+<form action='{{ url('/'. $data->id) }}' method='post'>
   @csrf
   @method('PUT')
   <div style="max-width: 500px" class="my-3 p-3 bg-body rounded shadow-sm mx-auto">

@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CityController::class, 'index'])->name('city.index');
 
-Route::resource('city', CityController::class);
+Route::get('/create', [CityController::class, 'create'])->name('city.create');
+Route::get('/edit/{id}', [CityController::class, 'edit'])->name('city.edit');
+
+Route::get('/export', [CityController::class, 'export'])->name('city.export');
+
+Route::post('/', [CityController::class, 'store'])->name('city.store');
+Route::put('/{id}', [CityController::class, 'update'])->name('city.update');
+
+Route::delete('/{id}', [CityController::class, 'destroy'])->name('city.destroy');

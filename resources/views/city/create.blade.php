@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('content')
-<form action='{{ url('city') }}' method='post'>
+<form action='{{ url('/') }}' method='post'>
   @csrf
   <div style="max-width: 500px" class="my-3 p-3 bg-body rounded shadow-sm mx-auto">
   @if ($errors->any())
